@@ -8,10 +8,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"> 
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet"  href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet"  href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -32,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li> 
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton" role='button'>
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -92,26 +94,26 @@
 
                 <div class="col-8">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="rops" id="rop1" >
+                        <input class="form-check-input" type="radio" name="rops" id="rop1" value="1" >
                         <label class="form-check-label" for="rop1"> 1</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="rops" id="rop2" >
+                        <input class="form-check-input" type="radio" name="rops" id="rop2" value="2">
                         <label class="form-check-label" for="rop2"> 2</label>
                     </div>
                     <div class="form-check form-check-inline  ">
-                        <input class="form-check-input " type="radio" name="rops" id="rop3" >
+                        <input class="form-check-input" type="radio" name="rops" id="rop3" value="3" checked>
                         <label class="form-check-label"  for="rop3"> 3</label>
                     </div>
                     <div class="form-check form-check-inline">    
-                        <input class="form-check-input" type="radio" name="rops" id="rop4" >
+                        <input class="form-check-input" type="radio" name="rops" id="rop4" value="4">
                         <label class="form-check-label" for="rop4"> 4</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="rops" id="rop5" >
+                        <input class="form-check-input" type="radio" name="rops" id="rop5" value="5">
                         <label class="form-check-label" for="rop5"> 5</label></div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="rops" id="rop6" >
+                        <input class="form-check-input" type="radio" name="rops" id="rop6" value="6">
                         <label class="form-check-label" for="rop6"> 6</label>
                     </div>
                 </div>
@@ -167,7 +169,7 @@
                     <img src="img/logo.png" class="img-responsive  center-block">
                 </div>
                 <div class="col-xs-12 col-sm-3 align-self-center">
-                    <a role="button" data-toggle="modal" data-target="#reserve_modal" class="btn btn-block nav-link btn-warning"><h5>Reserve Table</h5></a>
+                    <a role="button" class="btn btn-block nav-link btn-warning" id="reserveButton"><h6>Reserve Table</h6></a>
                 </div>
                     
             </div>
@@ -274,28 +276,13 @@
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#mycarousel').carousel({ interval:2000});
-            $('#carouselButton').click(function(){
-                if($('#carouselButton').children('span').hasClass('fa-pause')){
-                    $('#mycarousel').carousel('pause');
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                }
-                else{
-                    $('#mycarousel').carousel('cycle');
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                }
-                
-            })
-        });
-    </script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+    
 </body>
 
 </html>
